@@ -8,7 +8,7 @@ const Filter = () => {
   return (
     <FilterBox>
       <FilterLabel>
-        Find contacts by name
+        Find contacts by name or number
         <FilterInput
           type="text"
           value={filter}
