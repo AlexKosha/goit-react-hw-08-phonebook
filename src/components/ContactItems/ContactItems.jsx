@@ -1,14 +1,14 @@
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import { getFilter } from '../../redux/Filter/filterSlice';
-import { getContacts } from '../../redux/contacts/getState';
+import { selectFilter } from '../../redux/Filter/filterSlice';
+import { selectContacts } from '../../redux/contacts/selectorsContacts';
 import { ContactBox } from './ContactsItems.styled';
 import FormChangeContact from 'components/FormChangeContact/FormChangeContact';
 import ContactCard from 'components/ContactCard/ContactCard';
 
 const ContactItems = () => {
-  const contacts = useSelector(getContacts);
-  const filter = useSelector(getFilter);
+  const contacts = useSelector(selectContacts);
+  const filter = useSelector(selectFilter);
   const [activeContactId, setActiveContactId] = useState(false);
 
   const handleToggle = contactId => {

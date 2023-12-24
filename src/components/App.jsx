@@ -3,11 +3,11 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ContactsList from './ContactsList/ContactsList';
-import { ContactForm } from './ContactForm/ContactForm';
-import Layout from './Layout/Layout';
-import Login from './Login/Login';
+import Contacts from 'Pages/Contacts';
+import LogIn from 'Pages/LogIn';
+import Home from 'Pages/Home';
 import RegisterPage from 'Pages/RegisterPage';
+import Layout from './Layout/Layout';
 import RestrictedRoute from './RestrictedRoute/RestrictedRoute';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import { selectIsRefreshing } from '../redux/auth/selectors';
@@ -27,7 +27,7 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<ContactForm />} />
+          <Route index element={<Home />} />
           <Route
             path="/signUp"
             element={
@@ -40,13 +40,13 @@ export default function App() {
           <Route
             path="/login"
             element={
-              <RestrictedRoute redirectTo="/contacts" component={<Login />} />
+              <RestrictedRoute redirectTo="/contacts" component={<LogIn />} />
             }
           />
           <Route
             path="/contacts"
             element={
-              <PrivateRoute redirectTo="/login" component={<ContactsList />} />
+              <PrivateRoute redirectTo="/login" component={<Contacts />} />
             }
           />
         </Route>

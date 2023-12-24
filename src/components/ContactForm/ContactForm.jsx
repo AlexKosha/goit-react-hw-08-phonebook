@@ -1,10 +1,10 @@
 import React from 'react';
 import * as yup from 'yup';
-import { Formik, ErrorMessage } from 'formik';
+import { ErrorMessage, Formik } from 'formik';
 import { FormBtn, FormPhonebook, Input } from './ContactForm.styled';
 import * as ContactsService from '../../redux/contacts/contactsOperations';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from '../../redux/contacts/getState';
+import { selectContacts } from '../../redux/contacts/selectorsContacts';
 import { formatPhoneNumber } from 'helpers/formatPhoneNumber';
 
 const initialValues = {
@@ -35,7 +35,7 @@ const Schema = yup.object().shape({
 });
 
 export const ContactForm = () => {
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {

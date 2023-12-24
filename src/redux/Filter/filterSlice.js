@@ -16,4 +16,4 @@ export default filterSlice.reducer;
 
 export const { addFilter } = filterSlice.actions;
 
-export const getFilter = state => state.userFilter.filter;
+export const selectFilter = state => state.userFilter.filter;

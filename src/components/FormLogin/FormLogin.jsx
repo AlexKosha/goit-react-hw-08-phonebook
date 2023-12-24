@@ -4,8 +4,7 @@ import {
   LoginButton,
   LoginForm,
   LoginInput,
-  SignUpButton,
-} from './FormLogin.styled';
+  } from './FormLogin.styled';
 import { useDispatch } from 'react-redux';
 import { authorization } from '../../redux/auth/authOperations';
 
@@ -43,7 +42,6 @@ const FormLogin = () => {
           <LoginInput type="password" name="password" />
         </label>
         <LoginButton type="submit">Login</LoginButton>
-        <SignUpButton to="/signUp">SignUp</SignUpButton>
       </LoginForm>
     </Formik>
   );
