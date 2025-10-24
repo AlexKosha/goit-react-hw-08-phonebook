@@ -11,19 +11,19 @@ import {
 import { changeContact } from '../../redux/contacts/contactsOperations';
 
 const FormChangeContact = ({ contact, onSubmit }) => {
-  const { name, number, id } = contact;
+  const { name, phone, _id: id } = contact;
   const initialValues = {
     name,
-    number,
+    phone,
   };
   const dispatch = useDispatch();
 
   const handleSubmit = values => {
-    const formattedNumber = formatPhoneNumber(values.number);
+    const formattedNumber = formatPhoneNumber(values.phone);
 
     const newContact = {
       name: values.name,
-      number: formattedNumber,
+      phone: formattedNumber,
     };
 
     dispatch(changeContact({ id, newContact }))

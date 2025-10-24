@@ -21,7 +21,7 @@ const ContactItems = () => {
     return contacts.filter(
       contact =>
         contact.name.toLowerCase().includes(normalizedFilter) ||
-        contact.number.includes(filter)
+        contact.phone.includes(filter)
     );
   };
 
@@ -31,8 +31,8 @@ const ContactItems = () => {
     <>
       {visibleContacts.map(contact => {
         return (
-          <ContactBox key={contact.id}>
-            {activeContactId === contact.id ? (
+          <ContactBox key={contact._id}>
+            {activeContactId === contact._id ? (
               <FormChangeContact contact={contact} onSubmit={handleToggle} />
             ) : (
               <ContactCard contact={contact} onClickToggle={handleToggle} />

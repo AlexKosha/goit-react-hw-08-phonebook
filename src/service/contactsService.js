@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+axios.defaults.baseURL = 'https://contsctsdb-node.onrender.com';
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -12,10 +12,10 @@ export const getContacts = async token => {
   return contacts.data;
 };
 
-export const addContacts = async ({ name, number }) => {
+export const addContacts = async ({ name, phone }) => {
   return await axios.post('/contacts', {
     name,
-    number,
+    phone,
   });
 };
 

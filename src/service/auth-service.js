@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+axios.defaults.baseURL = 'https://contsctsdb-node.onrender.com';
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
@@ -10,9 +10,9 @@ const clearAuthHeader = () => {
 };
 
 export const singUp = async body => {
-  const createUser = await axios.post('/users/signup', body);
-  setAuthHeader(createUser.data.token);
-  return createUser.data;
+  const res = await axios.post('/users/register', body);
+  setAuthHeader(res.data.token);
+  return res.data;
 };
 
 export const logIn = async body => {
@@ -26,8 +26,8 @@ export const logOut = async () => {
   clearAuthHeader();
 };
 
-export const getProfile = async (token) => {
-  setAuthHeader(token)
+export const getProfile = async token => {
+  setAuthHeader(token);
   const profile = await axios.get('/users/current');
   return profile.data;
 };

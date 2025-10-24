@@ -55,38 +55,4 @@ export default function App() {
       <ToastContainer autoClose={3000} />
     </>
   );
-
-  // return (
-  //   <>
-  //     <Routes>
-  //       <Route path="/" element={<Layout />}>
-  //         <Route index element={<ContactForm />} />
-  //         <Route
-  //           path="/signUp"
-  //           element={
-  //             <RestrictedRoute
-  //               redirectTo="/contacts"
-  //               component={<RegisterPage />}
-  //             />
-  //           }
-  //         />
-  //         <Route
-  //           path="/login"
-  //           element={
-  //             <RestrictedRoute redirectTo="/contacts" component={<Login />} />
-  //           }
-  //         />
-  //         <Route
-  //           path="/contacts"
-  //           element={
-  //             <PrivateRoute redirectTo="/login" component={<ContactsList />} />
-  //           }
-  //         />
-  //         {/* <Route path="/contacts" element={<ContactsList />} /> */}
-  //       </Route>
-  //       <Route path="*" element={<Navigate to="/" />} />
-  //     </Routes>
-  //     <ToastContainer autoClose={3000} />
-  //   </>
-  // );
 }

@@ -25,12 +25,12 @@ const contactsSlice = createSlice({
         state.items.unshift(payload);
       })
       .addCase(deleteContact.fulfilled, (state, { payload }) => {
-        state.items = state.items.filter(contact => contact.id !== payload.id);
+        state.items = state.items.filter(contact => contact._id !== payload);
       })
       .addCase(changeContact.fulfilled, (state, { payload }) => {
-        const { id, name, number } = payload;
+        const { _id, name, phone } = payload;
         state.items = state.items.map(item =>
-          item.id === id ? { ...item, name, number } : item
+          item.id === _id ? { ...item, name, phone } : item
         );
       })
       .addMatcher(

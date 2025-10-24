@@ -1,12 +1,15 @@
 import styled from '@emotion/styled';
 
-export const Nav = styled.div`
+export const UserNav = styled.div`
   display: flex;
   gap: 20px;
+  align-items: center;
 `;
 
 export const UserEmail = styled.p`
   font-size: 16px;
+  color: #333;
+  margin: 0;
 `;
 
 export const LogOutButton = styled.button`
@@ -15,11 +18,13 @@ export const LogOutButton = styled.button`
   background-color: #4caf50;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 
   &:hover {
     background-color: #45a049;
+    transform: translateY(-1px);
   }
 
   &:focus {
